@@ -31,10 +31,10 @@ cordova.plugins.barcodeScanner.scan(
   
  
   
-  var url="http://www.outpan.com/view_product.php?barcode=078915030900&format=json";
+  var url="http://www.outpan.com/view_product.php?format=json&barcode="+result.text;
   $.get(url, function(prodinfo){
   // $("#result").html(result.text);
-   $("#result").html(JSON.stringify(prodinfo,null, 3));
+   $("#result").html(prodinfo.text);
   });
   
   
