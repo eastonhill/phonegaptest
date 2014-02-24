@@ -28,7 +28,17 @@
 $("#btnScan").click(function(){
 cordova.plugins.barcodeScanner.scan(
   function (result) {
-  $("#result").html(result.text);
+  
+ 
+  
+  var url="http://www.outpan.com/view_product.php?barcode=078915030900&format=json";
+  $.get(url, function(prodinfo){
+  // $("#result").html(result.text);
+   $("#result").html(JSON.stringify(prodinfo,null, 3));
+  });
+  
+  
+ 
     //  alert("We got a barcode\n" +
    //         "Result: " + result.text + "\n" +
       //      "Format: " + result.format + "\n" +
