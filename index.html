@@ -21,23 +21,27 @@
 		<li><a href="#"> Länk 3</a></li>
 		
         </ul>
+		
+		<br>
+		<button id="btnScan">Skanna</button>
     </div>
 </div>
 
 
 <script>
-
+$("#btnScan").click(function(){
 cordova.plugins.barcodeScanner.scan(
-      function (result) {
-          alert("We got a barcode\n" +
-                "Result: " + result.text + "\n" +
-                "Format: " + result.format + "\n" +
-                "Cancelled: " + result.cancelled);
-      }, 
-      function (error) {
-          alert("Scanning failed: " + error);
-      }
-   );
+  function (result) {
+      alert("We got a barcode\n" +
+            "Result: " + result.text + "\n" +
+            "Format: " + result.format + "\n" +
+            "Cancelled: " + result.cancelled);
+  }, 
+  function (error) {
+      alert("Scanning failed: " + error);
+  });
+});
+
 </script>
 </body>
 
