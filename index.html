@@ -32,9 +32,10 @@ cordova.plugins.barcodeScanner.scan(
  
   
   var url="http://www.outpan.com/view_product.php?format=json&barcode="+result.text;
+  alert(url);
   $.get(url, function(prodinfo){
   // $("#result").html(result.text);
-   $("#result").html(prodinfo.text);
+   $("#result").html(prodinfo);
   });
   
   
